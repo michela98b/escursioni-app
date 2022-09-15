@@ -1,0 +1,44 @@
+<div class="page">
+
+  <div class="row m-0 title-container">
+    <p class="fw-500 f-30 w-auto m-0">{{'place' | translate}}</p>
+    <mat-icon class="add-icon pointer" (click)="openAddPlaceDialog()">add_circle</mat-icon>
+  </div>
+
+  <mat-tab-group style="margin: 0px 20px;">
+    <!-- DETAIL -->
+    <mat-tab label="{{'map' | translate}}">
+      <div class="map" *ngIf="loaded">
+        <app-map [currentCenter]="center" [mapMarkers]="markers" [height]="'500px'"></app-map>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="{{'tab' | translate}}">
+
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">{{ 'name'| translate }}</th>
+            <th scope="col">{{ 'nation'| translate }}</th>
+            <th scope="col">{{ 'region'| translate }}</th>
+            <th scope="col">{{ 'province'| translate }}</th>
+            <th scope="col">{{ 'city'| translate }}</th>
+            <th scope="col">{{ 'address'| translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let place of places; let i=index" class="table-content">
+            <td> {{place.name || '-'}} </td>
+            <td> {{place.nation || '-'}} </td>
+            <td> {{place.region || '-'}}</td>
+            <td> {{place.province || '-'}}</td>
+            <td> {{place.city || '-'}}</td>
+            <td> {{place.address || '-'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+  </mat-tab-group>
+
+
+</div>

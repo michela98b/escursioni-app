@@ -1,0 +1,63 @@
+//Form
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 2px !important;
+    background-color: #45523e !important;
+}
+  
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+    height: 2px !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-label{
+    color: var(--black) !important;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple{
+    background-color: #45523e;
+}
+
+//Dialog
+.mat-dialog-container{
+    border-radius: 10px !important;
+ //   overflow-y: scroll !important;
+    background-color: #ffffff !important;
+}
+
+
+.mat-tab-group.mat-primary .mat-ink-bar{
+    background-color: var(--black) !important;
+ }
+
+ .mat-tab-label {
+    color: #45523e !important;
+    font-weight: 300 !important;
+    opacity: 1 !important;
+    font-size: 16px;
+    font-family: Poppins;
+    text-transform: uppercase;
+}
+  
+  /* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    color: #45523e !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+    font-size: 16px;
+    font-family: Poppins;
+}
+
+.mat-expansion-panel{
+    margin-bottom: 20px !important;
+    border-radius: 10px !important;
+}
+
+.toast-error{
+    border: 2px solid #45523e !important;
+    background-color: #ffffff !important;
+    border-radius: 5px !important;
+    color: black !important;
+    font-size: 14px !important;
+    padding: 10px 20px !important; 
+}
+
+.toast-progress{
+    background-color:  #45523e !important;
+}

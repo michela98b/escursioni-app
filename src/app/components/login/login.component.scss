@@ -1,0 +1,33 @@
+
+.login-page{
+    height: 100vh;
+    width:100vw;
+}
+.login-page::before {
+	content: "";
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-image: url(/assets/images/lake.jpg);
+}
+
+.login-form {
+	background-color: #ffffff;
+	width: 100%;
+	text-align:center;
+	padding:20px;
+	border-radius:10px;
+}
+
+.login-form-content{
+	width: 400px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    padding-top: 100px;
+    position: relative;
+}

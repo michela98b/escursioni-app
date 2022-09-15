@@ -1,0 +1,15 @@
+
+.paths-row{
+	grid-template-columns: 100px 50px 100px;
+	grid-template-rows: 80px auto 80px; 
+	column-gap: 20px;
+	row-gap: 20px;
+}
+
+.card-container{
+    width: 350px;
+    height: 350px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 15%);
+	padding: 10px;
+	border:1px solid #d8d8d8;
+}

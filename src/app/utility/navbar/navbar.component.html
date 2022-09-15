@@ -1,0 +1,45 @@
+<mat-toolbar class="main-navbar">
+    <div class="container-fluid">
+        <div class="row w-100 m-0 nav-container">
+            <div class="row m-0 w-auto p-0" style="align-items: center;">
+
+                <img src="assets/images/logom.png" class="logo pointer" (click)="goToHome()"> 
+
+                <ng-container *ngIf="isAdmin">
+                    <div class="nav-link pointer" (click)="goToPlaces()">
+                        <span class="t-up f-16 fw-300">{{'place' | translate}}</span>
+                    </div>
+                </ng-container>
+
+                <div class="nav-link pointer" (click)="goToPaths()">
+                    <span class="t-up f-16 fw-300">{{'paths' | translate}}</span>
+                </div>
+
+                <div class="nav-link pointer" (click)="goToActivities()">
+                    <span class="t-up f-16 fw-300">{{'activity' | translate}}</span>
+                </div>
+            </div>
+
+            <div class="profile-icon pointer" [mdePopoverTriggerFor]="profilePopover" mdePopoverTriggerOn="click"
+                #popoverTrigger="mdePopoverTrigger">
+                <mat-icon>person</mat-icon>
+
+                <mde-popover #profilePopover="mdePopover" [mdePopoverOverlapTrigger]="false">
+                    <mat-card style="max-width: 200px" class="profile-menu">
+                        <mat-card-content>
+                            <p class="fw-500 f-16 t-up">{{user.name}} {{user.surname}}</p>
+                            <ng-container *ngIf="!isAdmin">
+                                <p class="f-14 fw-300 card-item w-100 pointer" routerLink="/profile">
+                                    {{'profile' | translate}}<br></p>
+                            </ng-container>
+                            <p class="f-14 fw-300 card-item w-100 pointer" (click)="logout()">{{'logout' | translate}}
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
+                </mde-popover>
+            </div>
+
+        </div>
+
+    </div>
+</mat-toolbar>

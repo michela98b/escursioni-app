@@ -1,0 +1,15 @@
+<google-map #myGoogleMap [center]="center" width="100%"  [height]="mapHieght" [zoom]="zoom">
+
+    <map-marker #markerElem="mapMarker" *ngFor="let marker of markers" [position]="marker.position"
+        [label]="marker.label" [title]="marker.title" [options]="marker.options"
+        (mapClick)="openInfo(markerElem, marker.info)">
+    </map-marker>
+
+    <map-info-window>
+        <div style="display: flex; flex-direction:column">
+        {{ infoContent }}
+        <a href="{{getUrl(infoContent)}}">{{'openInGoogleMaps' | translate}}</a>
+    </div>
+    </map-info-window>
+
+</google-map>

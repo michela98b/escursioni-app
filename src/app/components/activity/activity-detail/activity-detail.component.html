@@ -1,0 +1,59 @@
+<div class="page content">
+    <div class="path-detail-container">
+        <ng-container *ngIf="activity!=null">
+
+            <app-map [currentCenter]="center" [mapMarkers]="markers" [height]="'350px'"></app-map>
+
+            <div class="row path-title-row mt-3 mb-3">
+                <p class="f-30 fw-500 m-0 w-auto">{{activity.name}}</p>
+
+                <ng-container *ngIf="isAdmin">
+                    <mat-icon class="title-icon pointer" (click)="deleteActivity()">delete</mat-icon>
+                </ng-container>
+                <ng-container *ngIf="isAdmin">
+                    <mat-icon class="title-icon pointer" (click)="goToEdit()">edit</mat-icon>
+                </ng-container>
+            </div>
+
+            <div class="row m-0">
+                <div class="col-3">
+                    <div class="path-info">
+
+                        <p class="m-0 f-12 fw-500">{{'difficulty' | translate}}</p>
+                        <p class="f-16 fw-300">{{activity.difficulty}}</p>
+
+                        <div class="row info-title">
+                            <mat-icon class="title-icon">timer</mat-icon>
+                            <p class="m-0 f-12 fw-500 w-auto">{{'durationFormLabel' | translate}}</p>
+                        </div>
+
+                        <p class="f-16 fw-300">{{activity.duration}}</p>
+
+                        <div class="row info-title">
+                            <mat-icon class="title-icon">people</mat-icon>
+                            <p class="m-0 f-12 fw-500 w-auto">{{'peoples' | translate}}</p>
+                        </div>
+
+                        <p class="f-16 fw-300">{{activity.peoples}}</p>
+                        <div class="row info-title">
+                            <mat-icon class="title-icon">euro_symbol</mat-icon>
+                            <p class="m-0 f-12 fw-500 w-auto">{{'price' | translate}}</p>
+
+                        </div>
+
+
+                        <p class="f-16 fw-300">{{activity.price}}€</p>
+
+                    </div>
+                </div>
+                <div class="col-9">
+                    <p class="f-16 fw-300">{{activity.description}}</p>
+                </div>
+
+            </div>
+
+
+
+        </ng-container>
+    </div>
+</div>

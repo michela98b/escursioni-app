@@ -1,0 +1,17 @@
+<div class="page">
+
+    <div class="row m-0 title-container">
+        <p class="fw-500 f-30 w-auto m-0">Percorsi</p>
+        <ng-container *ngIf="isAdmin">
+            <mat-icon class="add-icon pointer" (click)="goToNewPath()">add_circle</mat-icon>
+        </ng-container>
+    </div>
+
+    <div style="padding: 0px 20px">
+        <div class="row paths-row m-0">
+            <div class="card-container pointer" *ngFor="let path of paths" (click)="goToPathDetail(path.id)">
+                <app-path-card [path]="path"></app-path-card>
+            </div>
+        </div>
+    </div>
+</div>

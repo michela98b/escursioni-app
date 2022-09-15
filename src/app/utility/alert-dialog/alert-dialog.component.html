@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+
+            <img src="assets/images/ic-close-big.svg" class="icon-close-dialog pointer" (click)="close()">
+
+            <p  class="f-18 fw-500 modal-title t-up">{{title}}</p>
+            <p  class="f-16 fw-300">{{description}}</p>
+
+            <ng-container *ngIf="!showButtons">
+                <div class="w-100 modal-button">
+                    <button type="submit">OK</button>
+                  </div>
+            </ng-container>
+
+
+            <ng-container *ngIf="showButtons">
+                <div class="row w-100 m-0" style="justify-content: space-evenly;">
+                    <div class="half-btn">
+                        <button type="submit" (click)="close()">Annulla</button>
+                    </div>
+                    <div class="half-btn">
+                        <button type="submit" (click)="confirm()">OK</button>
+                    </div>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+</div>

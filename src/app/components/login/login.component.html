@@ -1,0 +1,30 @@
+
+<div class="container-fluid login-page">
+  
+    <div class="login-form-content">
+        <div class="login-form">
+          
+            <form [formGroup]="loginForm" class="w-100" (ngSubmit)="login()">
+                <p class="f-40 fw-500 login-title">{{'loginTitle' | translate}}</p>
+      
+                <mat-form-field class="w-100 fw-300">
+                  <mat-label>{{'email' | translate}}</mat-label>
+                  <input matInput formControlName="email">
+                  <mat-error class="error-message" *ngIf="loginForm.controls['email'].invalid">{{'genericErrorMessage' |
+                    translate}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-100 fw-300">
+                    <mat-label>{{'password' | translate}}</mat-label>
+                    <input matInput formControlName="password"
+                      type="password">
+                    <mat-error class="error-message" *ngIf="loginForm.controls['password'].invalid">{{'genericErrorMessage' |
+                      translate}}</mat-error>
+                  </mat-form-field>
+
+                  <button type="submit">Accedi</button>
+
+            </form>      
+        </div>
+    </div>
+</div>

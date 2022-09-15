@@ -1,0 +1,55 @@
+.section-content {
+	position: relative;
+	height: 450px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.section-content::before {
+	content: "";
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: 	rgba(160,160,160, 0.5)
+}
+
+.trekking-section {
+	background-image: url(/assets/images/trekking.jpg);
+	background-size: cover;
+    background-position: center;
+}
+.activity-section {
+	background-image: url(/assets/images/kayak2.jpg);
+	background-size: cover;
+    background-position: center;
+}
+
+.section-text {
+	position: relative;
+	text-align: center;
+}
+
+.section-button {
+    position: relative;
+    color: #f5ece5;
+    text-align: center;
+    border: 1px solid #f5ece5;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: transparent;
+    height: auto;
+}
+.profile-button{
+	position: relative;
+}
+
+.profile-section::before{
+	background-color: transparent !important;
+}

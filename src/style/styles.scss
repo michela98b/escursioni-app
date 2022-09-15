@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap');
+
+html {
+	height: 100%;
+}
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+    margin: 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+button {
+    background-color: #f5ece5;
+    border: 1px solid #45523e;
+    border-radius: 10px;
+    padding: 0px 30px;
+    height: 40px;
+    color: #45523e;
+    text-transform: uppercase;
+}
+
+.modal-button {
+    margin-top: 13px;
+}
+
+.modal-title {
+    text-align: center;
+    margin-bottom: 30px !important;
+    margin-top: 6px !important;
+}
+
+.icon-close-dialog {
+    right: -14px;
+    top: -14px;
+    position: absolute;
+}
+
+.page {
+    padding-top: 50px;
+}
+
+.add-icon {
+    color: #45523e;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 30px !important;
+    padding: 0;
+}
+
+.title-container {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+table tr{
+    border-bottom: 1px solid #d8d8d8;
+}
+
+table th {
+    border-bottom: 1px solid #d8d8d8;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: Poppins;
+    color: #45523e;
+}
+
+.table-content {
+    height: 50px;
+}
+
+table td {
+    border-bottom: 1px solid #d8d8d8;
+    border-top: none !important;
+    text-align: left;
+    font-weight: 300;
+    font-size: 14px;
+    vertical-align: middle !important;
+    display: table-cell;
+    padding: 0 0.75rem !important
+}
+
+.table :not(:first-child) {
+     border-top: none;
+}

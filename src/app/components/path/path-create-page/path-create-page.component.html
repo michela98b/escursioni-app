@@ -1,0 +1,75 @@
+<div class="container-fluid page">
+    <div class="form-container">
+        <p class="f-20 fw-500 t-up">{{'newPath' | translate}}</p>
+        <p class="f-12 fw-300">{{'newPathDescription' | translate}}</p>
+
+        <form [formGroup]="pathForm" class="w-100" (ngSubmit)="addPath()">
+            <mat-form-field class="w-100 fw-300">
+                
+                <mat-label>{{'name' | translate}}</mat-label>
+                <input matInput formControlName="name">
+                <mat-error class="error-message" *ngIf="pathForm.controls['name'].invalid">{{'genericErrorMessage' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 fw-300">
+                <mat-label>{{'description' | translate}} (max 10.000 caratteri)</mat-label>
+                <textarea matInput formControlName="description" rows="5" maxlength="10000"></textarea>
+                <mat-error class="error-message" *ngIf="pathForm.controls['description'].invalid">
+                    {{'genericErrorMessage' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 fw-300">
+                <mat-label>{{'durationFormLabel' | translate}}</mat-label>
+                <input matInput formControlName="duration">
+                <mat-error class="error-message" *ngIf="pathForm.controls['duration'].invalid">{{'genericErrorMessage' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <div class="row">
+
+                <div class="col-4">
+                    <mat-form-field class="w-100 fw-300">
+                        <mat-label>{{'heightFormLabel' | translate}}</mat-label>
+                        <input matInput formControlName="height">
+                        <mat-error class="error-message" *ngIf="pathForm.controls['height'].invalid">{{'genericErrorMessage' |
+                            translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-4">
+                    <mat-form-field class="w-100 fw-300">
+                        <mat-label>{{'difficulty' | translate}}</mat-label>
+                        <mat-select formControlName="difficulty">
+                            <mat-option *ngFor="let d of difficulties" [value]="d">
+                                {{d}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error class="error-message" *ngIf="pathForm.controls['difficulty'].invalid">
+                            {{'genericErrorMessage' | translate}}
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100 fw-300">
+                        <mat-label>{{'start' | translate}}</mat-label>
+                        <mat-select formControlName="start">
+                            <mat-option *ngFor="let place of places" [value]="place">
+                                {{place.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error class="error-message" *ngIf="pathForm.controls['start'].invalid">
+                            {{'genericErrorMessage' | translate}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">{{'createButton' | translate}}</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+.main-navbar{
+    background-color: #45523e;
+    height: 50px;
+    position: fixed;
+    display: block;
+    width: 100%;
+    z-index: 99;
+}
+
+.nav-link{
+    width: auto;
+    color: #f5ece5;
+}
+
+.profile-icon{
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #f5ece5;
+    border-radius: 50%;
+    color: #45523e;
+    padding: 0;
+}
+
+.nav-container{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-menu{
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border: solid 1px #e8e8e8;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card-item:focus{
+    outline: none;
+}
+
+.logo{
+    width: 48px;
+    height: 40px;
+    padding: 0;
+}

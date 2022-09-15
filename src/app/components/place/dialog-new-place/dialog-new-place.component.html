@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+
+      <img src="assets/images/ic-close-big.svg" class="icon-close-dialog pointer" (click)="close()">
+      <p class="f-18 fw-500 modal-title t-up">{{'newPlace' | translate}}</p>
+
+      <form [formGroup]="placeForm" class="w-100" (ngSubmit)="addPlace()">
+        <mat-form-field class="w-100 fw-300">
+          <mat-label>{{'name' | translate}}</mat-label>
+          <input matInput formControlName="name">
+          <mat-error class="error-message" *ngIf="placeForm.controls['name'].invalid">{{'genericErrorMessage' |
+            translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 fw-300">
+          <mat-label>{{'nation' | translate}}</mat-label>
+          <input matInput formControlName="nation">
+          <mat-error class="error-message" *ngIf="placeForm.controls['nation'].invalid">{{'genericErrorMessage' |
+            translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 fw-300">
+          <mat-label>{{'region' | translate}}</mat-label>
+          <input matInput formControlName="region">
+          <mat-error class="error-message" *ngIf="placeForm.controls['region'].invalid">{{'genericErrorMessage' |
+            translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100 fw-300">
+          <mat-label>{{'province' | translate}}</mat-label>
+          <input matInput formControlName="province">
+          <mat-error class="error-message" *ngIf="placeForm.controls['province'].invalid">{{'genericErrorMessage' |
+            translate}}</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field class="w-100 fw-300">
+          <mat-label>{{'city' | translate}}</mat-label>
+          <input matInput formControlName="city">
+          <mat-error class="error-message" *ngIf="placeForm.controls['city'].invalid">{{'genericErrorMessage' |
+            translate}}</mat-error>
+        </mat-form-field>
+
+        
+        <mat-form-field class="w-100 fw-300">
+          <mat-label>{{'address' | translate}}</mat-label>
+          <input matInput formControlName="address">
+          <mat-error class="error-message" *ngIf="placeForm.controls['address'].invalid">{{'genericErrorMessage' |
+            translate}}</mat-error>
+        </mat-form-field>
+
+
+        <div class="w-100 modal-button">
+          <button type="submit">{{'createButton' | translate}}</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

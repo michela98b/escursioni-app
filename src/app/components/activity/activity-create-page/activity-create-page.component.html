@@ -1,0 +1,85 @@
+<div class="container-fluid page">
+    <div class="form-container">
+        <p class="f-20 fw-500 t-up">{{'newActivity' | translate}}</p>
+        <p class="f-12 fw-300">{{'newActivityDescription' | translate}}</p>
+
+        <form [formGroup]="activityForm" class="w-100" (ngSubmit)="addActivity()">
+            <mat-form-field class="w-100 fw-300">
+
+                <mat-label>{{'name' | translate}}</mat-label>
+                <input matInput formControlName="name">
+                <mat-error class="error-message" *ngIf="activityForm.controls['name'].invalid">{{'genericErrorMessage' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 fw-300">
+                <mat-label>{{'description' | translate}} (max 10.000 caratteri)</mat-label>
+                <textarea matInput formControlName="description" rows="5"></textarea>
+                <mat-error class="error-message" *ngIf="activityForm.controls['description'].invalid">
+                    {{'genericErrorMessage' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 fw-300">
+                <mat-label>{{'durationFormLabel' | translate}}</mat-label>
+                <input matInput formControlName="duration">
+                <mat-error class="error-message" *ngIf="activityForm.controls['duration'].invalid">
+                    {{'genericErrorMessage' |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <div class="row">
+
+                <div class="col-4">
+                    <mat-form-field class="w-100 fw-300">
+                        <mat-label>{{'peoples' | translate}}</mat-label>
+                        <input matInput formControlName="peoples" type="number">
+                        <mat-error class="error-message" *ngIf="activityForm.controls['peoples'].invalid">
+                            {{'genericErrorMessage' |
+                            translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-4">
+                    <mat-form-field class="w-100 fw-300">
+                        <mat-label>{{'difficulty' | translate}}</mat-label>
+                        <mat-select formControlName="difficulty">
+                            <mat-option *ngFor="let d of difficulties" [value]="d">
+                                {{d}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error class="error-message" *ngIf="activityForm.controls['difficulty'].invalid">
+                            {{'genericErrorMessage' | translate}}
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100 fw-300">
+                        <mat-label>{{'place' | translate}}</mat-label>
+                        <mat-select formControlName="place">
+                            <mat-option *ngFor="let place of places" [value]="place">
+                                {{place.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error class="error-message" *ngIf="activityForm.controls['place'].invalid">
+                            {{'genericErrorMessage' | translate}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <mat-form-field class="w-100 fw-300">
+                <mat-label>{{'price' | translate}}</mat-label>
+                <input matInput formControlName="price" type="number">
+                <mat-error class="error-message" *ngIf="activityForm.controls['price'].invalid">{{'genericErrorMessage'
+                    |
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <div class="button-container">
+                <button type="submit">{{'createButton' | translate}}</button>
+            </div>
+        </form>
+    </div>
+</div>

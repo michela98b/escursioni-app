@@ -1,0 +1,38 @@
+<div class="page">
+
+    <section class="section-content trekking-section">
+        <h2 class="section-text f-30 t-white fw-500">EXPLORE</h2>
+        <p class="section-text t-white">Esplora le meraviglie della natura attraverso i nostri percorsi pensati per
+            tutti fino ai più esperti</p>
+        <button class="section-button" routerLink="/paths">Scopri</button>
+    </section>
+
+    <ng-container *ngIf="!isAdmin">
+        <section class="section-content profile-section">
+            <h2 class="section-text f-30 fw-500">I TUOI ITINERARI</h2>
+            <p class="section-text m-0">Crea i tuoi itinerari di viaggio aggiungendo i percorsi che ti piacerebbe fare
+            </p>
+            <p class="section-text">Progetta il tuo prossimo viaggio</p>
+            <button class="profile-button" routerLink="/profile">Crea</button>
+        </section>
+    </ng-container>
+
+    <ng-container *ngIf="isAdmin">
+        <section class="section-content profile-section">
+            <h2 class="section-text f-30 fw-500">LE LOCALITA'</h2>
+            <p class="section-text m-0">Aggiungi le località di partenza dei percorsi da trekking e i luoghi in cui si tengono le attività
+            </p>
+            <p class="section-text">Visualizzale sulla mappa</p>
+            <button class="profile-button" routerLink="/places">Aggiungi</button>
+        </section>
+    </ng-container>
+
+    <section class="section-content activity-section">
+        <h2 class="section-text f-30 t-white fw-500">ENJOY</h2>
+        <p class="section-text t-white">Esperienze indimenticabili e adatte a tutti. Vieni a scoprirle, il divertimento
+            ti
+            aspetta</p>
+        <button class="section-button" routerLink="/activities">Scopri</button>
+    </section>
+
+</div>

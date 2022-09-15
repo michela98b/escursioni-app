@@ -1,0 +1,41 @@
+<div class="page">
+
+
+  <ng-container *ngIf="!isAdmin">
+    <div class="row m-0 title-container">
+      <p class="fw-500 f-30 w-auto m-0">{{'itineraries' | translate}}</p>
+      <mat-icon class="add-icon pointer" (click)="openAddItineraryDialog()">add_circle</mat-icon>
+    </div>
+
+    <p class="f-14 fw-300" style="padding-left:30px">{{'itineraryPageDescription' | translate}}</p>
+
+    <ng-container *ngIf="itineraries.length == 0">
+      <p class="empty-state">{{'itinerariesEmptyState' | translate}}</p>
+    </ng-container>
+
+    <div style="padding:20px">
+
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let it of itineraries">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="fw-500 f-18">
+              {{it.name}}
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+       
+          <p class="fw-300 f-14">{{it.description}}</p>
+          <p class="fw-500 f-16">{{'myPaths' | translate}}</p>
+          <ul *ngFor="let path of it.paths">
+            <li class="fw-300 f-14 pointer t-green" (click)="goToPath(path.id)">{{path.name}}</li>
+          </ul>
+          <ng-container *ngIf="it.paths.length == 0">
+            <p>{{'pathsEmptyState' | translate}}</p>
+          </ng-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </div>
+  </ng-container>
+
+</div>

@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+  
+        <img src="assets/images/ic-close-big.svg" class="icon-close-dialog pointer" (click)="close()">
+        <p class="f-18 fw-500 modal-title t-up">{{'newItinerary' | translate}}</p>
+  
+        <form [formGroup]="itineraryForm" class="w-100" (ngSubmit)="addItinerary()">
+          <mat-form-field class="w-100 fw-300">
+            <mat-label>{{'name' | translate}}</mat-label>
+            <input matInput formControlName="name">
+            <mat-error class="error-message" *ngIf="itineraryForm.controls['name'].invalid">{{'genericErrorMessage' |
+              translate}}</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="w-100 fw-300">
+            <mat-label>{{'description' | translate}}</mat-label>
+            <input matInput formControlName="description">
+            <mat-error class="error-message" *ngIf="itineraryForm.controls['description'].invalid">{{'genericErrorMessage' |
+              translate}}</mat-error>
+          </mat-form-field>
+  
+          <div class="w-100 modal-button">
+            <button type="submit">{{'createButton' | translate}}</button>
+          </div>
+  
+        </form>
+  
+      </div>
+    </div>
+  </div>
